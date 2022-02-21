@@ -171,7 +171,7 @@ resource "azurerm_app_service" "this" {
     GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP = "false"
     GF_AUTH_AZUREAD_ENABLED             = "true"
     GF_AUTH_AZUREAD_NAME                = "Azure AD"
-    GF_AUTH_AZUREAD_ALLOW_SIGN_SIGN_UP  = "true"
+    GF_AUTH_AZUREAD_ALLOW_SIGN_UP       = "true"
     GF_AUTH_AZUREAD_CLIENT_ID           = var.client_id
     GF_AUTH_AZUREAD_CLIENT_SECRET       = "@Microsoft.KeyVault(VaultName=${azurerm_key_vault.this.name};SecretName=${azurerm_key_vault_secret.client_secret.name})"
     GF_AUTH_AZUREAD_SCOPE               = "openid email profile"
