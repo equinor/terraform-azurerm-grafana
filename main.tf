@@ -56,22 +56,6 @@ resource "azurerm_monitor_diagnostic_setting" "this" {
   }
 }
 
-resource "azurerm_key_vault_secret" "client_secret" {
-  name         = "client-secret"
-  value        = "placeholder"
-  key_vault_id = azurerm_key_vault.this.id
-
-  depends_on = [
-    azurerm_key_vault_access_policy.service_principal
-  ]
-
-  lifecycle {
-    ignore_changes = [
-      value # Allow value of secret to be changed outside of Terraform
-    ]
-  }
-}
-
 resource "random_password" "psql" {
   length  = 32
   special = false
@@ -173,7 +157,7 @@ resource "azurerm_app_service" "this" {
     GF_AUTH_AZUREAD_NAME                = "Azure AD"
     GF_AUTH_AZUREAD_ALLOW_SIGN_UP       = "true"
     GF_AUTH_AZUREAD_CLIENT_ID           = var.client_id
-    GF_AUTH_AZUREAD_CLIENT_SECRET       = "@Microsoft.KeyVault(VaultName=${azurerm_key_vault.this.name};SecretName=${azurerm_key_vault_secret.client_secret.name})"
+    GF_AUTH_AZUREAD_CLIENT_SECRET       = "@Microsoft.KeyVault(VaultName=${azurerm_key_vault.this.name};SecretName=client-secret)"
     GF_AUTH_AZUREAD_SCOPE               = "openid email profile"
     GF_AUTH_AZUREAD_AUTH_URL            = "https://login.microsoftonline.com/${data.azurerm_client_config.current.tenant_id}/oauth2/v2.0/authorize"
     GF_AUTH_AZUREAD_TOKEN_URL           = "https://login.microsoftonline.com/${data.azurerm_client_config.current.tenant_id}/oauth2/v2.0/token"

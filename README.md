@@ -57,7 +57,7 @@ Pass the app registration client ID to the `client_id` input variable when calli
 3) Set the following description: `azure-webapp`.
 4) Click "Add".
 
-Store the client secret value in the key vault secret created by this module: `https://kv-{app_name}-{environment_name}.vault.azure.net/secrets/client-secret/`.
+Store the client secret value in a key vault secret `client-secret` in the key vault `kv-{app_name}-{environment_name}` created by this module. Restart the app service `{app_name}-{environment_name}` created by this module so that it can fetch the client secret from the key vault.
 
 ### Configure enterprise application
 
