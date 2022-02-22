@@ -1,6 +1,11 @@
 output "key_vault_id" {
-  description = "Resource ID of key vault containing Grafana secrets"
-  value       = azurerm_key_vault.this.id
+  description = "ID of key vault containing Grafana secrets"
+  value       = module.vault.key_vault_id
+}
+
+output "postgresql_server_id" {
+  description = "ID of PostgreSQL database containing Grafana data"
+  value       = azurerm_postgresql_server.this.id
 }
 
 output "app_service_principal_id" {
