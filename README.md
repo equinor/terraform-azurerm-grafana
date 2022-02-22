@@ -15,7 +15,7 @@ Terraform module which creates an Azure Web App running a Grafana instance in a 
 5) Set the following redirect URI: `https://{app_name}-{environment_name}.azurewebsites.net`.
 6) Click "Register".
 
-Pass the app registration client ID to the `client_id` input variable when calling this module.
+Pass the app registration client ID to the `azuread_client_id` input variable when calling this module.
 
 #### Add owners
 

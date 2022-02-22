@@ -1,10 +1,5 @@
 provider "azurerm" {
-  features {
-    key_vault {
-      recover_soft_deleted_key_vaults = true
-      purge_soft_delete_on_destroy    = false
-    }
-  }
+  features {}
 }
 
 locals {
@@ -33,8 +28,10 @@ module "grafana" {
   location                   = azurerm_resource_group.example.location
   resource_group_name        = azurerm_resource_group.example.name
   log_analytics_workspace_id = azurerm_log_analytics_workspace.example.id
-  grafana_version            = "8.3.2"
-  client_id                  = "00000000-0000-0000-0000-000000000000"
-  allowed_groups             = ["00000000-0000-0000-0000-000000000000"]
-  allowed_domains            = ["domain.com"]
+
+  grafana_version = "8.3.2"
+
+  azuread_client_id       = "00000000-0000-0000-0000-000000000000"
+  azuread_allowed_groups  = ["00000000-0000-0000-0000-000000000000"]
+  azuread_allowed_domains = ["domain.com"]
 }
