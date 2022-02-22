@@ -21,7 +21,7 @@ variable "log_analytics_workspace_id" {
 }
 
 variable "psql_server_sku_name" {
-  description = "SKU name for PostgreSQL server, follows the 'tier_family_cores' pattern"
+  description = "SKU name for PostgreSQL server, follows the 'tier_family_cores' pattern (ref: https://azure.microsoft.com/en-us/pricing/details/postgresql/server/)"
   type        = string
   default     = "B_Gen5_1"
 }
@@ -39,25 +39,19 @@ variable "psql_server_auto_grow_enabled" {
 }
 
 variable "psql_server_backup_retention_days" {
-  description = "Backup retention days for PostgreSQL server"
+  description = "Backup retention days for PostgreSQL server, between 7 and 35 days"
   type        = number
   default     = 7
 }
 
 variable "psql_server_geo_redundant_backup_enabled" {
-  description = "Turn geo-redundant backups on/off for PostgreSQL server (not supported for Basic SKU tier)"
+  description = "Turn geo-redundant backups on/off for PostgreSQL server"
   type        = bool
   default     = false
 }
 
-variable "psql_server_public_network_access_enabled" {
-  description = "Whether or not public network access is allowed for PostgreSQL server (must be allowed for Basic SKU tier)"
-  type        = bool
-  default     = true
-}
-
 variable "app_service_plan_sku" {
-  description = "SKU tier and size for app service plan"
+  description = "SKU tier and size for app service plan (ref: https://azure.microsoft.com/en-us/pricing/details/app-service/linux/)"
   type = object({
     tier = string
     size = string

@@ -35,7 +35,7 @@ resource "azurerm_postgresql_server" "this" {
   backup_retention_days             = var.psql_server_backup_retention_days
   geo_redundant_backup_enabled      = var.psql_server_geo_redundant_backup_enabled
   infrastructure_encryption_enabled = false
-  public_network_access_enabled     = var.psql_server_public_network_access_enabled
+  public_network_access_enabled     = true
   ssl_enforcement_enabled           = true
   ssl_minimal_tls_version_enforced  = "TLS1_2"
 }
