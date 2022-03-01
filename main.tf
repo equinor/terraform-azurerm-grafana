@@ -5,7 +5,7 @@ locals {
 data "azurerm_client_config" "current" {}
 
 module "vault" {
-  source = "github.com/equinor/terraform-azurerm-vault?ref=d363f1f3be873f542f2f804d6adf798dc390f2f7"
+  source = "github.com/equinor/terraform-azurerm-vault?ref=c4da70f23236927bb789594b4a033e9b3a3b1173"
 
   app_name                   = var.app_name
   environment_name           = var.environment_name
