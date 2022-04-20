@@ -100,7 +100,7 @@ resource "azurerm_app_service" "this" {
   app_settings = {
     GF_SERVER_ROOT_URL                  = "https://${local.app_service_name}.azurewebsites.net"
     GF_SECURITY_ADMIN_PASSWORD          = "@Microsoft.KeyVault(SecretUri=${azurerm_key_vault_secret.grafana_password.versionless_id}/)"
-    GF_INSTALL_PLUGINS                  = "grafana-clock-panel,grafana-simple-json-datasource,grafana-azure-monitor-datasource"
+    GF_INSTALL_PLUGINS                  = "grafana-clock-panel,grafana-simple-json-datasource"
     GF_AUTH_GENERIC_OAUTH_ENABLED       = "false"
     GF_AUTH_GENERIC_OAUTH_ALLOW_SIGN_UP = "false"
     GF_AUTH_AZUREAD_ENABLED             = "true"
