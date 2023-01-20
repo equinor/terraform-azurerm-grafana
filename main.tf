@@ -95,6 +95,7 @@ resource "azurerm_app_service" "this" {
 
   site_config {
     linux_fx_version = "DOCKER|grafana/grafana:${var.grafana_version}"
+    ftps_state       = "Disabled"
   }
 
   app_settings = {
