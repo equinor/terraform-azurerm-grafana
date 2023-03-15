@@ -1,19 +1,27 @@
-output "key_vault_id" {
-  description = "ID of key vault containing Grafana secrets"
-  value       = module.vault.key_vault_id
+output "instance_name" {
+  value = azurerm_dashboard_grafana.this.name
 }
 
-output "postgresql_server_id" {
-  description = "ID of PostgreSQL database containing Grafana data"
-  value       = azurerm_postgresql_server.this.id
+output "instance_id" {
+  value = azurerm_dashboard_grafana.this.id
 }
 
-output "app_service_principal_id" {
-  description = "Principal ID of app service managed identity"
-  value       = azurerm_app_service.this.identity[0].principal_id
+output "endpoint" {
+  value = azurerm_dashboard_grafana.this.endpoint
 }
 
-output "app_service_default_site_hostname" {
-  description = "Default hostname of app service"
-  value       = azurerm_app_service.this.default_site_hostname
+output "grafana_version" {
+  value = azurerm_dashboard_grafana.this.grafana_version
+}
+
+output "identity_principal_id" {
+  value = azurerm_dashboard_grafana.this.identity[0].principal_id
+}
+
+output "identity_tenant_id" {
+  value = azurerm_dashboard_grafana.this.identity[0].tenant_id
+}
+
+output "outbound_ip" {
+  value = azurerm_dashboard_grafana.this.outbound_ip
 }
