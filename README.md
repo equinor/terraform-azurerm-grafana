@@ -1,3 +1,6 @@
-# Azure Grafana Terraform module
+# terraform-azurerm-grafana
 
-Terraform module which creates an Azure Web App running a Grafana instance in a Docker container
+[![Conventional Commits](https://img.shields.io/badge/Conventional%20Commits-1.0.0-yellow.svg)](https://conventionalcommits.org)
+[![Equinor Terraform Baseline](https://img.shields.io/badge/Equinor%20Terraform%20Baseline-1.0.0-blueviolet)](https://github.com/equinor/terraform-baseline)
+
+Terraform module which creates an Azure Managed Grafana instance.
