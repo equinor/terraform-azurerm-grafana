@@ -5,6 +5,7 @@ resource "azurerm_dashboard_grafana" "this" {
   api_key_enabled                   = false
   deterministic_outbound_ip_enabled = false
   public_network_access_enabled     = true
+  zone_redundancy_enabled           = false
 
   identity {
     type = "SystemAssigned"
