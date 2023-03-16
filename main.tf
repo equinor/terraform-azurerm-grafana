@@ -14,3 +14,27 @@ resource "azurerm_dashboard_grafana" "this" {
 
   tags = var.tags
 }
+
+resource "azurerm_monitor_diagnostic_setting" "this" {
+  name                       = var.diagnostic_setting_name
+  target_resource_id         = azurerm_dashboard_grafana.this.id
+  log_analytics_workspace_id = var.log_analytics_workspace_id
+
+  dynamic "enabled_log" {
+    for_each = toset(var.diagnostic_setting_enabled_log_categories)
+
+    content {
+      category = enabled_log.value
+    }
+  }
+
+  metric {
+    category = "AllMetrics"
+    enabled  = false
+
+    retention_policy {
+      days    = 0
+      enabled = false
+    }
+  }
+}
