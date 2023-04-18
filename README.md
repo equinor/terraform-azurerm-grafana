@@ -16,5 +16,3 @@ Firefox browser is only supported on Windows devices when it comes to [condition
 - Use Firefox 91+, since it is supported for device-based Conditional Access, but "Allow Windows single sign-on for Microsoft, work, and school accounts" needs to be enabled.
 
 - Pursue the use of a different browser.
-
-
