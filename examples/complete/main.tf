@@ -19,6 +19,14 @@ module "log_analytics" {
   location            = azurerm_resource_group.example.location
 }
 
+module "identity" {
+  source = "github.com/equinor/terraform-azurerm-identity?ref=v1.1.0"
+
+  identity_name       = "id-${random_id.example.hex}"
+  resource_group_name = azurerm_resource_group.example.name
+  location            = azurerm_resource_group.example.location
+}
+
 module "grafana" {
   source = "../.."
 
@@ -26,6 +34,11 @@ module "grafana" {
   resource_group_name        = azurerm_resource_group.example.name
   location                   = azurerm_resource_group.example.location
   log_analytics_workspace_id = module.log_analytics.workspace_id
+
+  identity = {
+    type         = "UserAssigned"
+    identity_ids = [module.identity.identity_id]
+  }
 }
 
 data "azurerm_subscription" "current" {}
