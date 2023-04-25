@@ -74,7 +74,7 @@ provider "grafana" {
   alias = "base"
   url   = module.grafana.endpoint
   # To obtain the token, you can use the following command:
-  # TF_VAR_token=$(az grafana api-key create --key `date +%s` --name istio-grafana -g istio-aks -r editor --time-to-live 4m -o json | jq -r .key)
+  # export TF_VAR_token=$(az grafana api-key create --key `date +%s` --name dg-{name} -g rg-{name} -r editor --time-to-live 15m -o json | jq -r .key)
   auth = var.token
 
   store_dashboard_sha256 = true
