@@ -47,7 +47,7 @@ data "azurerm_subscription" "current" {}
 resource "azurerm_role_assignment" "monitoring_reader" {
   scope                = data.azurerm_subscription.current.id
   role_definition_name = "Monitoring Reader"
-  principal_id         = module.grafana.identity_principal_id
+  principal_id         = module.identity.identity_principal_id
 }
 
 data "azurerm_client_config" "current" {}

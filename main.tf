@@ -8,8 +8,13 @@ resource "azurerm_dashboard_grafana" "this" {
   public_network_access_enabled     = true
   zone_redundancy_enabled           = false
 
-  identity {
-    type = "SystemAssigned"
+  dynamic "identity" {
+    for_each = var.identity != null ? [var.identity] : []
+
+    content {
+      type         = identity.value["type"]
+      identity_ids = identity.value["identity_ids"]
+    }
   }
 
   tags = var.tags
