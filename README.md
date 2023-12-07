@@ -16,3 +16,6 @@ Firefox 91+ is only supported on Windows devices when it comes to [conditional a
 
 - Pursue the use of a different browser.
   
+## Contributing
+
+See [Contributing guidelines](CONTRIBUTING.md).
