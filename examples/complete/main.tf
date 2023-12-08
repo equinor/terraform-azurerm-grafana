@@ -23,11 +23,13 @@ module "grafana" {
   log_analytics_workspace_id = module.log_analytics.workspace_id
 }
 
-data "azurerm_subscription" "current" {}
+data "azurerm_resource_group" "example" {
+  name = var.resource_group_name
+}
 
-# Give Managed Grafana instances access to read monitoring data in current subscription.
+# Give Managed Grafana instances access to read monitoring data in given resource group.
 resource "azurerm_role_assignment" "monitoring_reader" {
-  scope                = data.azurerm_subscription.current.id
+  scope                = data.azurerm_resource_group.example.id
   role_definition_name = "Monitoring Reader"
   principal_id         = module.grafana.identity_principal_id
 }
