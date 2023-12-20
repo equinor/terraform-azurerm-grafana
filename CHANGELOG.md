@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.0.1](https://github.com/equinor/terraform-azurerm-grafana/compare/v2.0.0...v2.0.1) (2023-12-20)
+
+
+### Bug Fixes
+
+* remove diagnostic setting retention policies ([#23](https://github.com/equinor/terraform-azurerm-grafana/issues/23)) ([9ab8fec](https://github.com/equinor/terraform-azurerm-grafana/commit/9ab8fec064997cc78300268fd94d5dfe69ec4bec))
+
 ## [2.0.0](https://github.com/equinor/terraform-azurerm-grafana/compare/v1.0.0...v2.0.0) (2023-03-16)
 
 
