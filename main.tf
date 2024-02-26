@@ -1,5 +1,5 @@
 locals {
-  diagnostic_setting_metric_categories = [""]
+  diagnostic_setting_metric_categories = ["AllMetrics"]
 }
 
 resource "azurerm_dashboard_grafana" "this" {
