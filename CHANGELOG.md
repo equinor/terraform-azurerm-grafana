@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.1.0](https://github.com/equinor/terraform-azurerm-grafana/compare/v2.0.1...v2.1.0) (2024-02-27)
+
+
+### Features
+
+* disable metrics by default ([#28](https://github.com/equinor/terraform-azurerm-grafana/issues/28)) ([fb37f0e](https://github.com/equinor/terraform-azurerm-grafana/commit/fb37f0ef4772a5815f02e37e2533b2250371bdb4))
+
 ## [2.0.1](https://github.com/equinor/terraform-azurerm-grafana/compare/v2.0.0...v2.0.1) (2023-12-20)
 
 
