@@ -18,6 +18,17 @@ variable "log_analytics_workspace_id" {
   type        = string
 }
 
+variable "identity" {
+  description = "The identity or identities to configure for this managed Grafana instance."
+
+  type = object({
+    type         = optional(string, "SystemAssigned")
+    identity_ids = optional(list(string), [])
+  })
+
+  default = {}
+}
+
 variable "diagnostic_setting_name" {
   description = "The name of this Diagnostic Setting."
   type        = string
