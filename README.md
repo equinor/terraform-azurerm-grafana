@@ -63,4 +63,4 @@ Firefox 91+ is only supported on Windows devices when it comes to [conditional a
 
 ## Contributing
 
-See [Contributing guidelines](CONTRIBUTING.md).
+See [Contributing guidelines](https://github.com/equinor/terraform-baseline/blob/main/CONTRIBUTING.md).
