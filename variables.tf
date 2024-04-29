@@ -13,6 +13,12 @@ variable "location" {
   type        = string
 }
 
+variable "grafana_major_version" {
+  description = "Which major version of Grafana to deploy."
+  type        = string
+  default     = "9"
+}
+
 variable "log_analytics_workspace_id" {
   description = "The ID of the Log Analytics workspace to send diagnostics to."
   type        = string
