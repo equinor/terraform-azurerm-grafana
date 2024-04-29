@@ -12,6 +12,8 @@ resource "azurerm_dashboard_grafana" "this" {
   public_network_access_enabled     = true
   zone_redundancy_enabled           = false
 
+  grafana_major_version = var.grafana_major_version
+
   identity {
     type = "SystemAssigned"
   }
