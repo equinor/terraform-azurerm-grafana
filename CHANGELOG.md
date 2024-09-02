@@ -1,5 +1,12 @@
 # Changelog
 
+## [2.2.1](https://github.com/equinor/terraform-azurerm-grafana/compare/v2.2.0...v2.2.1) (2024-09-02)
+
+
+### Documentation
+
+* update variable descriptions and add features list ([#37](https://github.com/equinor/terraform-azurerm-grafana/issues/37)) ([cb6fba3](https://github.com/equinor/terraform-azurerm-grafana/commit/cb6fba33c4f34d155b3d11a170ba1a54e55c8843))
+
 ## [2.2.0](https://github.com/equinor/terraform-azurerm-grafana/compare/v2.1.0...v2.2.0) (2024-04-29)
 
 
