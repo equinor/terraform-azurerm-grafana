@@ -1,5 +1,5 @@
 variable "instance_name" {
-  description = "The name of this managed Grafana instance."
+  description = "The name of this Managed Grafana instance."
   type        = string
 }
 
@@ -25,7 +25,7 @@ variable "log_analytics_workspace_id" {
 }
 
 variable "diagnostic_setting_name" {
-  description = "The name of this Diagnostic Setting."
+  description = "The name of this diagnostic setting."
   type        = string
   default     = "audit-logs"
 }

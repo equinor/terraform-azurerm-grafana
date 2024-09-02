@@ -6,6 +6,10 @@
 
 Terraform module which creates an Azure Managed Grafana instance.
 
+## Features
+
+- Audit logs sent to given Log Analytics workspace by default.
+
 ## Development
 
 1. Read [this document](https://code.visualstudio.com/docs/devcontainers/containers).
